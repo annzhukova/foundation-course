@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+</head>
+<body>
+    <form method="post">
+        <fieldset>
+            <legend>Registration form</legend>
+            <em>Fields with * sign are required</em>
+                <p>
+                    <label>Full name *</label>
+                    <input type="text" name="full-name" required />
+                </p>
+
+                <p>
+                    <label>Student email *</label>
+                    <input type="email" name="email" required />
+                </p>
+                <p>
+                    <label>Phone number *</label>
+                    <input type="tel" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required/>
+                </p>
+                <p>
+                    <label>Country: </label>
+                    <select name="where">
+                        <option>Choose a country</option>
+                        <option>Canada</option>
+                        <option>Finland</option>
+                        <option>United States</option>
+                    </select>
+                </p>
+             <button type="submit">button</button>
+
+        
+        </fieldset>
+    </form>
+</body>
+</html>
