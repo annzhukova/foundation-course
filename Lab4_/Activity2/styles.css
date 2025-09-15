@@ -1,0 +1,17 @@
+p {
+    font-size: 12pt; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.highlight {
+    background-color: orange;
+}
+
+#special {
+    border: 1px solid;
+    padding: 10px 5px; 
+    margin: 10px;
+}
+
+div a:hover {
+    font-weight: bold;
+}
