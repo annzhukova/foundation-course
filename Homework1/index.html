@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+</head>
+<body>
+    <header>
+        <p>Anna Zhukova</p>
+        <p><em>Living my life</em></p>
+        <nav>
+            <a href="#about">About me</a> |
+            <a href="#projects">My projects</a> |
+            <a href="#contacts">Contact me</a> 
+        </nav>
+    </header>
+    <main>
+        <section id="about">
+            <article>
+                <h2>About me</h2>
+                <p>Hi, my name is Anna Zhukova. I live in Tallinn. I am a bachelor and a master of Applied Mathematics and Informatics. I studied Statistics, Algorithms, and different methods for creating and evaluating maths models.
+                    </p>
+                <p>My bachelor's degree thesis was about superconductivity in graphene nanochannel
+                structures. I had studied eigenfunctions and eigenvalues of a particle in a complex chain and
+                built a mathematical model for researching properties of superconductivity. I used Green's
+                function and theory of zero radius potential for approximating resolving this task.</p>
+
+                <p>I worked
+                as a frontend engineer at Yandex in 2010-2012 years where I got a bit of experience working with user interfaces
+                and usability.</p>
+                <p>
+                In 2012 I founded a startup <a href="#sportfolio">Sportfolio</a>. For
+                me it was a great life learning and experience.
+                </p>
+                <p>During 2014-2024 I was on maternity leave.</p>
+                <p>In March 2020 I took a course of Applied Data Science Specialization in Coursera.org. It was
+                based on Python language and visualisation tools. I was finishing it when I was waiting for
+                the birth of my child.</p>
+                <p>In 2025 I started my HCI Master Program.</p>
+                <p>My hobby are sport, travel, bicycle travel with family, ecology, baking printed gingerbread (<a href="http://maguslinn.com">http://maguslinn.com</a>), videography, blogging.</p>
+            </article>
+        </section>
+        <section id="projects">
+            <h2>My projects</h2>
+            <article>
+                <h3 id="sportfolio">Sportfolio</h3>
+                <details>
+                    <img src="assets/images/sportfolio.png" weight="200" height="300"/>
+                    <p>2011 - 2015</p>
+                    <p>Sportfolio was providing a service to managers of sport events
+                    to organize their competitions and for athletes to participate in them and to record their
+                    achievements. We were the first to provide such a service in Russia.
+                    The biggest contest for Sportfolio was the ERGO White nights marathon (annual marathon
+                    in Saint Petersburg, Russia) in 2014. There were 6k participants from 40 countries and our service
+                    helped a lot with preparing data and accepting payments as well as providing insurance
+                    services via online registration form. About 50% participants had registered online, thus
+                    saving time and money for both categories of our customers: organizers and athletes.
+                    </p>
+                 </details> 
+            </article>
+            <article>
+                <h3 id="maguslinn">Maguslinn</h3>
+                <details>
+                    <img src="assets/images/maguslinn.jpg" weight="200" height="300"/>
+                    <p>2016 - present</p>
+                    <p>My hobby is baking souvenir gingerbread with prints. There are different views and tastes of it from classic gingerbread to special almondbread with martzipan filling and unique berrybread with natural berries.</p>
+                    <p><a href="http://maguslinn.com">Welcome to my website</a></p>
+                </details>
+            </article>
+            <article>
+                <h3>Velozhuki</h3>
+                <details>
+                    <img src="assets/images/velozhuki.jpeg" weight="200" height="300"/>
+                    <p>2009 - present</p>
+                    <p>My family tradition is bicycle travelling. Since 2007 we went to many countries all around Europe and also we had a trip to Baikal lake in Russia in 2010. </p>
+                    <p>Hope website will be very soon. I write about our travelling and life in <a href="https://t.me/velozhuki">my blog</a> and see some video from our trips: <a href="https://www.youtube.com/playlist?list=PLBCRyEycnbu6VIhzuvvovLVrvF3ERQ1rb">Norway by car and bikes</a>, <a href="https://youtube.com/watch?v=XN-SOLMseTs">Holland</a>.</p>
+                </details>
+            </article>
+        </section>
+        <section id="contacts">
+            <h2>My contacts</h2>
+            <p>
+                <a href="https://www.linkedin.com/in/anna-zhukova-34a00183/">My linkedIn profile</a>
+            </p>
+            <p>If you have any questions feel free to ask them via this contact form. Looking forward to read it.</p>
+            <form method="post">
+                <fieldset>
+                    <legend>PLease, feel free to contact me</legend>
+                    <em>Fields with * sign are required</em>
+                        <p>
+                            <label>Full name *</label>
+                            <input type="text" name="full-name" required />
+                        </p>
+            
+                        <p>
+                            <label>Email *</label>
+                            <input type="email" name="email" required />
+                        </p>
+                        <p>
+                            <label>Phone number</label>
+                            <input type="tel" name="phone" />
+                        </p>
+                        <p>
+                            <label>Subject: </label>
+                            <select name="subject">
+                                <option>Choose a subject:</option>
+                                <option>Question</option>
+                                <option>Advertisement</option>
+                                <option>Partnership</option>
+                            </select>
+                        </p>
+                        <p>
+                            <label>Your message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </p>
+                        <p>
+                            <label>Prefer method for answer: </label>
+                            <select name="subject">
+                                <option>Email</option>
+                                <option>Phone</option>
+                                <option>Social network</option>
+                            </select>
+                        </p>
+                     <input type="reset" name="reset" />   
+                     <button type="submit">Send</button>
+            
+                
+                </fieldset>
+            </form>
+        </section>
+    </main>   
+        <!--Use a <nav> element within the <header> to provide easy navigation between the different sections of your page. Include links to the Introduction, Projects, and Contact Information sections.
+        
+        Footer:-->
+    <footer>Thanks for your time and visiting my webpage. &#169; Anna Zhukova </footer>    
+        
+<!--Add a <footer> element at the bottom of your page with any additional information, such as copyright notice, social media links, or a small "Thank you for visiting" message.-->
+</body>
+</html>
