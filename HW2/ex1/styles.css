@@ -1,0 +1,77 @@
+/* Add your CSS style definitions to this file */
+body {
+    margin: 0em 4em 0em 4em;
+    background-color: #f9f9f9;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+h1, blockquote {
+    font-family: Roboto Slab;
+}
+
+img {
+    width: 100%;
+
+}
+
+article {
+    background-color: white;
+}
+
+h1{
+    color: #9f2042;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2rem;
+    margin: 0;
+}
+
+#details {
+    text-align: center;
+    margin-top: 0;
+    color: #a9a9ba;
+}
+
+blockquote {
+    font-size: 1rem;
+    background-color: #f9f9f9;
+    border: #ececec solid;
+    margin: 0.5em 4em;
+    padding: 0.5em 1.5em;
+}
+
+p, #buttons  {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-left: 1em;
+    font-size: 0.9em;
+}
+/*#buttons {
+    
+}*/
+#buttons a {
+    
+    padding: 0.5em;
+    border: #ececec solid;
+    border-radius: 0.2em;
+    text-decoration: none;
+}
+
+a {
+    color: #ec8295;
+}
+
+a:hover {
+    background-color: #a9a9ba;
+    color: #9f2042;
+}
+
+footer {
+    background-color: #29293a;
+    color: white;
+    font-size: 0.9rem;
+    padding-top: 0.5em;
+    padding-left: 1em;
+    padding-bottom: 0.5em;
+    margin-top: 1em;
+}

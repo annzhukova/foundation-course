@@ -1,0 +1,130 @@
+
+* {
+    box-sizing: border-box;
+ }
+ body, section, header, div, p, h1, h2, h3, ul, li, figure, figcaption {
+    margin: 0;
+    padding: 0;
+ }
+ body {
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+    background-color: #F0F4F8;
+    font-weight: 300;
+ }
+ 
+ /* add styles here */
+ header {
+   width: 100%;
+   min-height: 500px;
+   background-image: url("images/florence.jpg");
+   background-size: 100%;
+   background-repeat: no-repeat;
+  
+
+ }
+
+ nav {
+   background-image: url("images/logo.svg");
+   background-size: 55px;
+   background-repeat: no-repeat;
+   padding: 5px 10px 10px 75px;
+ }
+
+ nav ul li {
+   display: inline-block;
+   list-style-type: none;
+   padding: 15px;
+
+ }
+
+ nav ul li a {
+   color: #51279b;
+   text-decoration: none;
+ }
+
+ nav ul li a:hover,  nav ul li a:visited {
+   color: #8662c7;
+ }
+
+ header div {
+   margin-left: 90px;
+   margin-top: 80px;
+   color: white;
+ }
+
+ header div h2 {
+   font-size: 48px;
+ }
+
+ header div p {
+   font-size: 24px;
+ }
+
+ header div a {
+  
+   background-color: #51279b;
+   padding: 20px;
+   margin-top: 20px;
+   display: inline-block;
+   color: white;
+   text-decoration: none;
+ }
+
+ header div a:hover, header div a:visited {
+   color: #8662c7;
+ }
+
+ section.card {
+   display: inline-block;
+   margin: 5px 5px 10px 0px;
+   background-color: white;
+   overflow: hidden;
+   width: 32%;
+
+ }
+ section.card:first-child {
+   margin-left: 15px;
+ }
+
+ section.card:last-child {
+   margin-left:0px;
+ }
+ section.card img {
+   width: 100%;
+ }
+
+ section h3 {
+   font-size: 14px;
+   padding-left: 5px;
+ }
+
+ .description  {
+   font-size: 12px;
+   padding-left: 5px;
+ }
+
+ .social {
+   font-size: 10px;
+   padding-left: 10px;
+   margin-top: 5px;
+ } 
+
+ .heart {
+   background-image: url("images/heart.png");
+   background-size: 10px;
+   background-repeat: no-repeat;
+   padding-left: 15px;
+   margin-right: 15px;
+   background-position: left;
+   
+ }
+
+ .comment {
+   background-image: url("images/comment.png");
+   background-size: 10px;
+   background-repeat: no-repeat;
+   padding-left: 15px;
+   background-position: left;
+ }
+
