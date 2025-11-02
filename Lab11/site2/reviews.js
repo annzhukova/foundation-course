@@ -43,12 +43,52 @@ const reviews = [
   }
 
   //showReview(3);
+
   clickRandomReview = document.querySelector(".random-btn");
-//const clickRandomReview = document.querySelector(".random-btn");
-//const clickRandomReview = document.querySelector(".random-btn");
+  clickLeftReview = document.querySelector(".fa-chevron-left");
+  clickRightReview = document.querySelector(".fa-chevron-right");
+ 
 clickRandomReview.addEventListener('click', ()=>{
-  let randomIndex = Math.floor(Math.random(reviews.length));
+  let randomIndex = Math.floor(Math.random()*reviews.length);
    showReview(randomIndex);
 });
 
+clickRightReview.addEventListener('click', showNextReview);
+clickLeftReview.addEventListener('click', showPrevReview);
+
+function showNextReview() {
+    let currIndex = getCurrIndex();
+    let nextIndex = 0;
+    if (currIndex >= reviews.length-1) {
+      nextIndex = 0;
+    } else {
+      nextIndex = currIndex + 1;
+    }
+    showReview(nextIndex);
+}
+
+function showPrevReview() {
+  
+    let currIndex = getCurrIndex();
+    let prevIndex = 0;
+    if (currIndex === 0) {
+      prevIndex = reviews.length-1;
+    } else {
+      prevIndex = currIndex - 1;
+    }
+    showReview(prevIndex);
+}
+
+function getCurrIndex(){
+  let currIndex = 0;
+  let currAuthorName=reviewAuthor.textContent;
+  for (let i=0;i<reviews.length; i++) {
+    if (reviews[i].name === currAuthorName){
+      currIndex = i;
+    }
+  }
+  return currIndex;
+}
+
 //Hw add prev and next functionality (disable or cycle it)
+
