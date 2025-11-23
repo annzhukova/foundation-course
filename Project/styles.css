@@ -1,0 +1,477 @@
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    max-width: 1280px;
+    padding: 0 30px;
+}
+
+h1 {
+    font-size: 32px;
+    text-align: left;
+}
+
+h2 {
+    color: #353434;
+    font-size: 26px;
+}
+a {
+    text-decoration: none;
+    /*color: white;*/
+}
+
+#header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px 10px;
+}
+
+.logo {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    font-style: italic;
+    color: black;
+    font-size: 20px; 
+}
+
+#topmenu_ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    justify-content: flex-end;
+    margin: -5px;
+}
+
+/* for mobile #topmenu div display flex */
+
+#topmenu ul li {
+    padding: 5px;
+    padding-left: 10px;
+    /*transition: border-radius .3s, background-color 2s;*/
+}
+
+/*#topmenu ul li:hover {
+    background-color: #830B11;
+}*/
+
+#topmenu a {
+    color: #830B11;
+    font-size: 15px;
+}
+
+/*#topmenu ul li:hover a {
+    color: white;
+}
+*/
+#mobileMenu {
+    display: none;
+}
+
+#topmenu .selected a  {
+    background-color: #830B11;
+    padding: 8px;
+    border-radius: 10px;
+    color: white;
+}
+
+#topmenu .selected a {
+    color: white;
+}
+
+/*#topmenu ul li.selected:hover {
+    transform: scale (1.1);
+}*/
+
+#banner {
+    font-size: 20px;
+    width: 100%;
+    padding: 50px 80px;
+    background-image: url("images/main/recipe2.jpeg");
+    background-repeat: no-repeat;
+}
+
+#banner {  
+    animation: imageLoad 0.8s ease-out;
+}
+
+.text p {   
+    
+    width: 250px;
+    font-size: 14px;
+    color:white;
+    text-shadow: 1px 1px 2px rgb(125, 142, 156);
+    
+}
+
+#start_button, .action_button {
+    padding: 15px 40px;
+    background-color: #830B11;
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+#start_button, .action_button a {
+    color: white;
+}
+#go a {
+    color: white;
+    font-size: 12px;
+} 
+
+#content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+
+.item {
+    width: 30%;
+    background-color: white;
+    border-radius: 15px;    
+    padding: 10px 0 0 0;
+    margin: 15px 0;
+}
+
+.item:hover {
+    animation: blockScale 2s ease-out;
+}
+
+.item h3 {
+    color: #353434;
+    font-weight: bold;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+}
+
+
+.item img {
+    width: 100%;
+    height: 100%;
+}
+
+#features {
+    padding-top: 30px;
+}
+
+.item_picture {
+    width: 300px;
+}
+.item_picture_mod {
+    max-height: auto;
+    background-color: #e8e9e8;
+    border-radius: 7px;
+    text-align: center;
+    width: 300px;
+    padding: 20px;
+    margin: 25px 15px;
+}
+.item_picture img, .item_picture_mod img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+/* Footer */
+footer {
+    background-color: white;
+    padding: 20px;
+    
+}
+
+#footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    justify-content: space-around;
+}
+
+
+footer ul {
+    list-style: none;
+}
+#footer_menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+}
+
+#footer_menu li {
+    padding-right: 10px ;
+}
+
+#footer_menu li a, footer p {
+    color: rgb(174, 170, 170);
+    font-size: 10px;
+}
+
+#social_media {
+    display: flex;
+}
+#social_media li {
+    padding-right: 10px;
+}
+#social_media img {
+    width: 7px;
+}
+
+footer p {
+    text-align: center;
+    font-size: 7px;;
+}
+
+
+
+/* Forms */
+
+fieldset {
+    border: 0;
+}
+.form_container {
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-basis: 300px;
+    
+}
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+
+}
+button {
+    padding: 15px 40px;
+    background-color: #830B11;
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer; 
+}
+
+button:hover {
+    transition: background-color 0.5s, color 0.45s;
+    transform: scale(1.05);
+    color: black;
+}
+select {
+  border:  1px solid #ccc;
+  background: #eeeeee;
+  border-radius: 5px;
+  padding: 10px;
+  transition: 0.4s;
+  width: 107%
+}
+
+select:hover,
+select:focus {
+  background: #dddddd;
+} 
+fieldset em {
+    color: #830B11;
+}
+.hint {
+    font-size: 10px;
+    color: darkgray;
+    margin-top: -25px;
+}
+
+/* Meal view */
+
+#path {
+  list-style-type: none; 
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  padding-inline-start: 0; 
+}
+
+#path li a, #path li  {
+    color: rgb(113, 112, 112);
+    
+}
+
+#path li a {
+    text-decoration: underline;
+}
+#meal_info {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+#meal_photo {
+   width: 400px; 
+   height: 300px;
+   border-radius: 15px;
+   box-shadow: 2px 3px 5px 1px rgba(47, 59, 64, 0.35);
+   margin-right: 30px;
+}
+
+
+
+#meal_description div {
+    padding-bottom: 10px;
+}
+
+.meal_label {
+    color: #555;
+    font-size: 14px;
+}
+
+/*Meal list (cook book)*/
+#meals_wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    flex-wrap: wrap;
+}
+.meal {
+    margin-right: 20px;
+    margin-bottom: 30px;
+}
+
+#meals_wrap .meal_img {
+    width: 320px;
+    height: 240px;
+    border-radius: 10px;
+    box-shadow: 2px 3px 5px 1px rgba(47, 59, 64, 0.35);
+}
+/* Planner */
+.planner_day_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    background-color: #eeeded;
+    border-radius: 15px;
+    box-shadow: 2px 3px 5px 1px rgba(47, 59, 64, 0.35);
+    padding:10px;
+}
+.planner_day_container:hover {
+    background-color: #dcdbdb;
+    box-shadow: 3px 4px 6px 2px rgba(47, 59, 64, 0.35);
+}
+.planner_day {
+    margin-bottom: 30px;
+}
+
+.planner_item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 10px;
+}
+
+.planner_item_category {
+    color: #830B11;
+    text-align: center;
+    display: inline-block;
+}
+
+.planner_item_img {
+    width: 160px;
+    height: 120px;
+    
+}
+/*.planner_item_img:hover {
+    transform: scale(1.05) ease-in-out;
+    transition: .3s ;
+}*/
+.planner_item_name_wrap {
+    width: 160px;
+}
+.planner_item_name_wrap span {
+    color: #353434;
+}
+.planner_item_actions span, .meal_actions span {
+    font-size: 10px;
+    color: darkgray;
+    cursor: pointer;
+}
+.planner_item_actions span:hover, .meal_actions span:hover{
+    color: #353434;
+}
+
+@keyframes imageLoad {
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes blockScale {
+    0% {
+       height: 100%; 
+       box-shadow: 2px 3px 5px 1px rgba(47, 59, 64, 0.35);
+    }
+    100% {
+        height: 130%;
+
+    }
+}
+
+@media (max-width: 776px) {
+   
+    #mobileMenu {
+        display: block;
+    }
+    #topmenu_ul {
+        display: none;       
+    }
+    #header {
+        justify-content: space-between;  
+    }
+    #banner {
+        flex-direction: column;
+        align-items:normal;
+    }
+
+    .item {
+        flex-direction: column;
+        align-items:center;
+    }
+    .item_picture {
+        width: 100%;
+        clip-path: inset(0 round 10px);
+    }
+    .item_picture_mod {
+        width: 85%;
+    }
+    h2 {
+        font-size: 36px;
+    }
+    .item div {
+        text-align: center;
+    }
+    .planner_day_container {
+        flex-direction: column;
+    }
+    .planner_item {
+        padding: 0 3px;
+    }
+    #meal_info {
+        flex-direction: column;
+    }
+
+}
