@@ -13,6 +13,7 @@ h2 {
     color: #353434;
     font-size: 26px;
 }
+
 a {
     text-decoration: none;
     /*color: white;*/
@@ -30,7 +31,7 @@ a {
     font-weight: bold;
     font-style: italic;
     color: black;
-    font-size: 20px; 
+    font-size: 20px;
 }
 
 #topmenu_ul {
@@ -66,7 +67,7 @@ a {
     display: none;
 }
 
-#topmenu .selected a  {
+#topmenu .selected a {
     background-color: #830B11;
     padding: 8px;
     border-radius: 10px;
@@ -89,20 +90,21 @@ a {
     background-repeat: no-repeat;
 }
 
-#banner {  
+#banner {
     animation: imageLoad 0.8s ease-out;
 }
 
-.text p {   
-    
+.text p {
+
     width: 250px;
     font-size: 14px;
-    color:white;
+    color: white;
     text-shadow: 1px 1px 2px rgb(125, 142, 156);
-    
+
 }
 
-#start_button, .action_button {
+#start_button,
+.action_button {
     padding: 15px 40px;
     background-color: #830B11;
     color: white;
@@ -112,25 +114,28 @@ a {
     cursor: pointer;
     margin-bottom: 10px;
 }
-#start_button, .action_button a {
+
+#start_button,
+.action_button a {
     color: white;
 }
+
 #go a {
     color: white;
     font-size: 12px;
-} 
+}
 
 #content {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    
+
 }
 
 .item {
     width: 30%;
     background-color: white;
-    border-radius: 15px;    
+    border-radius: 15px;
     padding: 10px 0 0 0;
     margin: 15px 0;
 }
@@ -159,6 +164,7 @@ a {
 .item_picture {
     width: 300px;
 }
+
 .item_picture_mod {
     max-height: auto;
     background-color: #e8e9e8;
@@ -168,7 +174,9 @@ a {
     padding: 20px;
     margin: 25px 15px;
 }
-.item_picture img, .item_picture_mod img{
+
+.item_picture img,
+.item_picture_mod img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -179,7 +187,7 @@ a {
 footer {
     background-color: white;
     padding: 20px;
-    
+
 }
 
 #footer {
@@ -193,6 +201,7 @@ footer {
 footer ul {
     list-style: none;
 }
+
 #footer_menu {
     display: flex;
     flex-direction: row;
@@ -200,10 +209,11 @@ footer ul {
 }
 
 #footer_menu li {
-    padding-right: 10px ;
+    padding-right: 10px;
 }
 
-#footer_menu li a, footer p {
+#footer_menu li a,
+footer p {
     color: rgb(174, 170, 170);
     font-size: 10px;
 }
@@ -211,16 +221,19 @@ footer ul {
 #social_media {
     display: flex;
 }
+
 #social_media li {
     padding-right: 10px;
 }
+
 #social_media img {
     width: 7px;
 }
 
 footer p {
     text-align: center;
-    font-size: 7px;;
+    font-size: 7px;
+    ;
 }
 
 
@@ -230,23 +243,27 @@ footer p {
 fieldset {
     border: 0;
 }
+
 .form_container {
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 800px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     flex-basis: 300px;
-    
+
 }
+
 label {
     font-weight: bold;
     display: block;
     margin-bottom: 5px;
     color: #555;
 }
-input, textarea {
+
+input,
+textarea {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
@@ -255,6 +272,7 @@ input, textarea {
     font-size: 16px;
 
 }
+
 button {
     padding: 15px 40px;
     background-color: #830B11;
@@ -262,7 +280,7 @@ button {
     border-radius: 10px;
     text-align: center;
     display: inline-block;
-    cursor: pointer; 
+    cursor: pointer;
 }
 
 button:hover {
@@ -270,61 +288,115 @@ button:hover {
     transform: scale(1.05);
     color: black;
 }
+
 select {
-  border:  1px solid #ccc;
-  background: #eeeeee;
-  border-radius: 5px;
-  padding: 10px;
-  transition: 0.4s;
-  width: 107%
+    border: 1px solid #ccc;
+    background: #eeeeee;
+    border-radius: 5px;
+    padding: 10px;
+    transition: 0.4s;
+    width: 107%
 }
 
 select:hover,
 select:focus {
-  background: #dddddd;
-} 
+    background: #dddddd;
+}
+
 fieldset em {
     color: #830B11;
 }
+
 .hint {
     font-size: 10px;
     color: darkgray;
     margin-top: -25px;
 }
 
+#ingredientsResults {
+    margin-top: -30px;
+    font-size: 12px;
+    background-color: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    max-height: 100px;
+    overflow: scroll;
+    scroll-behavior: smooth;
+    z-index: 2;
+
+}
+
+.inrgName {
+    padding: 5px;
+    cursor: pointer;
+}
+
+#ingredientList {
+    margin-top: 25px;
+}
+
+#ingredientList .ingredientWeight,
+#ingredientList .ingredientUnit {
+    width: 50px;
+    display: inline;
+    height: 10px;
+}
+
+#ingredientList label {
+    display: inline;
+    font-weight: normal;
+    padding-left: 10px;
+}
+
+.ingredientDel {
+    cursor: pointer;
+}
+
+#ingredientList .hint {
+    cursor: help;
+}
+
 /* Meal view */
 
 #path {
-  list-style-type: none; 
-  display: flex;
-  justify-content: flex-start;
-  flex-direction: row;
-  padding-inline-start: 0; 
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    padding-inline-start: 0;
 }
 
-#path li a, #path li  {
+#path li a,
+#path li {
     color: rgb(113, 112, 112);
-    
+
 }
 
 #path li a {
     text-decoration: underline;
 }
+
+
 #meal_info {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
 }
 
-#meal_photo {
-   width: 400px; 
-   height: 300px;
-   border-radius: 15px;
-   box-shadow: 2px 3px 5px 1px rgba(47, 59, 64, 0.35);
-   margin-right: 30px;
+#noMealsMsg {
+    display: none;
 }
 
+#noMealsMsg a {
+    color: #830B11;
+}
 
+#meal_photo {
+    width: 400px;
+    height: 300px;
+    border-radius: 15px;
+    box-shadow: 2px 3px 5px 1px rgba(47, 59, 64, 0.35);
+    margin-right: 30px;
+}
 
 #meal_description div {
     padding-bottom: 10px;
@@ -336,15 +408,48 @@ fieldset em {
 }
 
 /*Meal list (cook book)*/
+#overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    z-index: -1;
+}
+
+#overlay_popup {
+    position: absolute;
+    display: none;
+    padding: 50px 20px 20px 20px;
+    top: 30%;
+    left: 30%;
+    width: 400px;
+    height: 400px;
+    background-color: white;
+    z-index: 1;
+    text-align: center;
+}
+
+#overlay_popup input {
+    width: 150px;
+}
+
 #meals_wrap {
     display: flex;
     flex-direction: row;
     justify-content: start;
     flex-wrap: wrap;
 }
+
 .meal {
     margin-right: 20px;
     margin-bottom: 30px;
+    z-index: -2;
 }
 
 #meals_wrap .meal_img {
@@ -353,7 +458,9 @@ fieldset em {
     border-radius: 10px;
     box-shadow: 2px 3px 5px 1px rgba(47, 59, 64, 0.35);
 }
+
 /* Planner */
+
 .planner_day_container {
     display: flex;
     flex-direction: row;
@@ -362,14 +469,17 @@ fieldset em {
     background-color: #eeeded;
     border-radius: 15px;
     box-shadow: 2px 3px 5px 1px rgba(47, 59, 64, 0.35);
-    padding:10px;
+    padding: 10px;
 }
+
 .planner_day_container:hover {
     background-color: #dcdbdb;
     box-shadow: 3px 4px 6px 2px rgba(47, 59, 64, 0.35);
 }
+
 .planner_day {
     margin-bottom: 30px;
+    z-index: 0;
 }
 
 .planner_item {
@@ -388,8 +498,9 @@ fieldset em {
 .planner_item_img {
     width: 160px;
     height: 120px;
-    
+
 }
+
 /*.planner_item_img:hover {
     transform: scale(1.05) ease-in-out;
     transition: .3s ;
@@ -397,15 +508,20 @@ fieldset em {
 .planner_item_name_wrap {
     width: 160px;
 }
+
 .planner_item_name_wrap span {
     color: #353434;
 }
-.planner_item_actions span, .meal_actions span {
+
+.planner_item_actions span,
+.meal_actions span {
     font-size: 10px;
     color: darkgray;
     cursor: pointer;
 }
-.planner_item_actions span:hover, .meal_actions span:hover{
+
+.planner_item_actions span:hover,
+.meal_actions span:hover {
     color: #353434;
 }
 
@@ -414,6 +530,7 @@ fieldset em {
         opacity: 0;
         transform: scale(0.95);
     }
+
     100% {
         opacity: 1;
         transform: scale(1);
@@ -422,9 +539,10 @@ fieldset em {
 
 @keyframes blockScale {
     0% {
-       height: 100%; 
-       box-shadow: 2px 3px 5px 1px rgba(47, 59, 64, 0.35);
+        height: 100%;
+        box-shadow: 2px 3px 5px 1px rgba(47, 59, 64, 0.35);
     }
+
     100% {
         height: 130%;
 
@@ -432,44 +550,54 @@ fieldset em {
 }
 
 @media (max-width: 776px) {
-   
+
     #mobileMenu {
         display: block;
     }
+
     #topmenu_ul {
-        display: none;       
+        display: none;
     }
+
     #header {
-        justify-content: space-between;  
+        justify-content: space-between;
     }
+
     #banner {
         flex-direction: column;
-        align-items:normal;
+        align-items: normal;
     }
 
     .item {
         flex-direction: column;
-        align-items:center;
+        align-items: center;
     }
+
     .item_picture {
         width: 100%;
         clip-path: inset(0 round 10px);
     }
+
     .item_picture_mod {
         width: 85%;
     }
+
     h2 {
         font-size: 36px;
     }
+
     .item div {
         text-align: center;
     }
+
     .planner_day_container {
         flex-direction: column;
     }
+
     .planner_item {
         padding: 0 3px;
     }
+
     #meal_info {
         flex-direction: column;
     }

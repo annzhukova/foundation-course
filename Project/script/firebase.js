@@ -5,7 +5,6 @@ import { getFirestore } from "https://www.gstatic.com/firebasejs/12.6.0/firebase
 import { firebaseConfig } from "./config.js";
 
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-const auth = getAuth(app);
 
-export const db = getFirestore(app);
+// const analytics = getAnalytics(app);
+// const auth = getAuth(app);

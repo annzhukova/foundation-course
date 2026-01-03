@@ -1,13 +1,12 @@
 //const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-auth.js";
-import { firebaseConfig } from "./config.js";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signOut
+  //onAuthStateChanged
+} from "https://www.gstatic.com/firebasejs/12.6.0/firebase-auth.js";
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
+
 
 export const signup = async (email, password) => {
   try {
@@ -48,3 +47,9 @@ export const signout = async () => {
     console.log(errorCode, errorMessage);
   }
 }
+
+/*export const onAuthChange = (callback) => {
+  return onAuthStateChanged(auth, user => {
+    callback(user);
+  })
+}*/

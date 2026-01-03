@@ -1,10 +1,10 @@
 import { logout, onAuthChange } from './auth.js';
 
-//import { readMeals } from './firestore.js';
+import { readMeals } from './firestore.js';
 
 const logoutBtn = document.querySelector("#logout");
-/*const messageDiv = document.getElementById("message");
-const addMealBtn = document.getElementById("addMealBtn");*/
+/*const messageDiv = document.getElementById("message");*/
+const addMealBtn = document.getElementById("add_meal_btn");
 
 logoutBtn.addEventListener('click', async () => {
     try {
@@ -15,21 +15,20 @@ logoutBtn.addEventListener('click', async () => {
         messageDiv.textContent = "Logout failed: " + error.message;
     }
 })
-/*
+
 addMealBtn.addEventListener('click', (e) => {
     e.preventDefault();
     window.location.href = "add_meal.html?mode=new"
-});*/
+});
 
 onAuthChange(async (user) => {
     if (!user) {
         window.location.href = "index.html";
     }
     console.log(user);
-    //const results = await readMeals(user.uid);
+    const results = await readMeals(user.uid);
 
-
-    //console.log(results);
+    console.log(results);
     //updateMealsList(results);
 })
 
@@ -42,18 +41,25 @@ function updateMealsList(meals) {
         return;
     }
     meals.forEach(meal => {
-        const li = document.createElement("li");
-        li.dataset.id = meal.id;
+        const div = document.createElement("div");
+        div.classList.add("meal");
+        div.dataset.id = meal.id;
 
-        li.innerHTML = `
-            <div class="meal-title">${meal.title}</div>
-            <div class="meal-date">${meal.created ? new Date(meal.created.seconds * 1000).toLocaleDateString() : "-"}</div>
-            <div class="meal-actions">
-            <button class="editMealBtn">Edit</button>
-            <button class="deleteMealBtn">Delete</button>
+        div.innerHTML = `
+            <div class="meal">
+                <div>
+                    <img class="meal_img" src="${meal.img}" alt="${meal.img}" />
+                </div>
+                <div class="meal_name">
+                    <span>${meal.title}</span>
+                </div>
+                <div class="meal_actions">
+                    <span class="actions_del deleteMealBtn">delete</span>
+                    <span class="planner_item_actions_replace editMealBtn">edit</span>
+                </div>
             </div>`;
 
-        const viewMeal = li.querySelector(".meal-title");
+        const viewMeal = div.querySelector(".meal_img");
         const editMealBtn = li.querySelector(".editMealBtn");
         const deleteMealBtn = li.querySelector(".deleteMealBtn");
 
@@ -67,10 +73,10 @@ function updateMealsList(meals) {
             window.location.href = "add_meal.html?mode=edit&id=" + meal.id;
         });
 
-        deleteEntryBtn.addEventListener('click', (e) => {
+        deleteMealBtn.addEventListener('click', (e) => {
             e.preventDefault();
             window.location.href = "delete_meal.html?mode=delete"
         });
-        mealsList.appendChild(li);
+        mealsList.appendChild(div);
     });
 }

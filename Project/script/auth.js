@@ -11,9 +11,12 @@ import {
 } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-auth.js";
 import { firebaseConfig } from "./config.js";
 
+// import { app } from './firebase.js'
+
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
+const auth = getAuth();
+
 
 export const signup = async (email, password) => {
     try {
@@ -46,7 +49,6 @@ export const logout = async () => {
 
     try {
         await signOut(auth);
-        console.log("logout");
     }
     catch (error) {
         const errorCode = error.code;
@@ -58,7 +60,6 @@ export const logout = async () => {
 
 export const onAuthChange = (callback) => {
     return onAuthStateChanged(auth, user => {
-        console.log(user);
         callback(user);
     })
 }

@@ -136,7 +136,6 @@ filterBtns.forEach((btn)=> {
     btn.addEventListener('click', (e)=>{
         //console.log(e.currentTarget.dataset.id);
         const category = e.currentTarget.dataset.id;
-
         const menuSubList = menuList.filter((menuItem) => menuItem.category  === category);
        // console.log(menuSubList);
 

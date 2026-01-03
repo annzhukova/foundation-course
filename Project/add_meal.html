@@ -1,78 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css" />
+    <script src="./script/meal-editor.js" type="module" defer></script>
     <title>Add meal</title>
 </head>
+
 <body>
     <header id="header">
         <div class="logo" id="logo">Meal planner</div>
         <nav id="topmenu">
             <div id="mobileMenu">&equiv;</div>
-        <ul id="topmenu_ul">
-            <li class="selected"><a href="#">Home</a></li>
-            <li><a href="#">Meals</a></li>
-            <li><a href="#">Planner</a></li>
-        </ul>
-        </nav>   
+            <ul id="topmenu_ul">
+                <li class="selected"><a href="#">Home</a></li>
+                <li><a href="#">Meals</a></li>
+                <li><a href="#">Planner</a></li>
+                <li><a href="#" id="logout">Logout</a></li>
+            </ul>
+        </nav>
     </header>
     <main>
         <h2>Add meal to your cook book</h2>
         <section class="form_container">
-           <form method="post">
+            <form method="post">
                 <fieldset>
                     <em>Fields with * sign are required</em>
-                        <p>
-                            <label>Title *</label>
-                            <input type="text" name="title" required />
-                        </p>
-                        <p>
-                            <label for="avatar">Choose a meal picture:</label>
-                            <input type="file" id="meal_photo" name="meal_photo" accept="image/png, image/jpeg" />
-                        </p>
-                        <p>
-                            <label>Portions</label>
-                            <input name="portions" />
-                            <p class="hint">For example, 2</p>
-                        </p>
-                        <p>
-                            <label>Difficulty</label>
-                            <select>
-                                <option>Choose Difficulty</option>
-                                <option>Very easy</option>
-                                <option>Easy</option>
-                                <option>Ok</option>
-                                <option>Hard</option>
-                                <option>Very hard</option>
-                            </select>
-                        </p>
-                        <p>
-                            <label>Category </label>
-                            <select>
-                                <option>Choose a category</option>
-                                <option>Breakfast</option>
-                                <option>Lunch</option>
-                                <option>Snack</option>
-                                <option>Dinner</option>
-                            </select>
-                        </p>
-                        <p>
-                            <label>Ingredients</label>
-                            <textarea id="ingredients" name="ingredients"></textarea>
-                        </p>
-                                                <p>
-                            <label>Preporation</label>
-                            <textarea id="preporation" name="preporation"></textarea>
-                        </p>
-                    <button type="submit">Save</button>
+                    <p>
+                        <label>Title *</label>
+                        <input type="text" name="title" id="title" required />
+                    </p>
+                    <p>
+                        <label>Choose a meal picture:</label>
+                        <input type="file" id="meal_photo_input" name="meal_photo" accept="image/png, image/jpeg" />
+                    <p class="hint">Acceptable formats: Png, jpg</p>
+                    </p>
+                    <p>
+                        <label>Portions</label>
+                        <input name="portions" id="portions" />
+                    <p class="hint">For example, 2</p>
+                    </p>
+                    <p>
+                        <label>Difficulty</label>
+                        <select id="difficulty">
+                            <option>Choose Difficulty</option>
+                            <option>Very easy</option>
+                            <option>Easy</option>
+                            <option>Ok</option>
+                            <option>Hard</option>
+                            <option>Very hard</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label>Category</label>
+                        <select id="meal_category">
+                            <option>Choose category</option>
+                            <option>Breakfast</option>
+                            <option>Lunch</option>
+                            <option>Snack</option>
+                            <option>Dinner</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label>Calories</label>
+                        <input name="calories" id="calories" />
+                    <p class="hint">For example, 345 Ccal</p>
+                    <p>
+                        <label>Ingredients</label>
+                        <input type="text" name="ingredients" id="ingredients_search"
+                            placeholder="Start type ingredient name" />
+                    </p>
+                    <div id="ingredientsResults">
+                        <div id="ingredients_container_values"></div>
+                    </div>
+                    <div id="ingredientList"></div>
+                    <p>
+                        <label>Preporation</label>
+                        <textarea id="preporation" name="preporation"></textarea>
+                    </p>
+                    <button type="button" id="cancelBtn">Cancel</button>
+                    <button type="submit" id="saveMealBtn">Save</button>
 
-                
+
                 </fieldset>
             </form>
         </section>
     </main>
 </body>
+
 </html>

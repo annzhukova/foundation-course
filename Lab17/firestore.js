@@ -1,20 +1,23 @@
-// import { app } from "./firebase.js";
-import { getFirestore, collection, getDocs, query, where, addDoc, doc, getDoc, updateDoc } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-firestore.js";
+import { db } from "./firebase.js";
+import { collection, getDocs, query, where, addDoc, doc, getDoc, updateDoc } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-firestore.js";
 
-// const app = getApp()
-const db = getFirestore();
-
-export const readMeals = async (userId) => {
-    const q = query(collection(db, "meals"), where("userId", "==", userId));
+export const readEntries = async (userId) => {
+    const q = query(collection(db, "entries"), where("userId", "==", userId));
     const querySnapshot = await getDocs(q);
+
+    /*const records = await getDocs(collection(db, "entries"));
+    records.forEach((doc) => {
+        console.log(`${doc.id} => ${doc.data()}`);
+    });*/
+
     return querySnapshot.docs.map(d => ({ id: d.id, ...d.data() }));
 }
 
-export const createNewMealInFirestore = async (data) => {
+export const createNewEntryInFirestore = async (data) => {
 
     try {
         //Add a new document with a generated id.
-        const docRef = await addDoc(collection(db, "meals"), data);
+        const docRef = await addDoc(collection(db, "entries"), data);
         console.log("Document written with ID: ", docRef.id);
         return docRef.id;
     } catch (error) {
@@ -23,8 +26,8 @@ export const createNewMealInFirestore = async (data) => {
     }
 }
 
-export const readMeal = async (mealId) => {
-    const docRef = doc(db, "meals", mealId);
+export const readEntry = async (entryId) => {
+    const docRef = doc(db, "entries", entryId);
     const docSnap = await getDoc(docRef);
 
     if (docSnap.exists()) {
@@ -37,8 +40,8 @@ export const readMeal = async (mealId) => {
     }
 }
 
-export const updateMealInFirestore = async (mealId, updatedData) => {
-    const docRef = doc(db, "meals", mealId);
+export const updateEntryInFirestore = async (entryId, updatedData) => {
+    const docRef = doc(db, "entries", entryId);
     try {
         await updateDoc(docRef, updatedData);
         return true;
