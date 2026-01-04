@@ -19,6 +19,8 @@ const urlParams = new URLSearchParams(window.location.search);
 const mode = urlParams.get("mode");
 const mealId = urlParams.get("mealId");
 
+const logo = document.getElementById("logo");
+
 let currentUser = null;
 let ingredientsUrl = 'https://www.themealdb.com/api/json/v1/1/list.php?i=list';
 let ingredientsList = null;
@@ -55,7 +57,15 @@ onAuthChange(async (user) => {
 
 });
 
+logo.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.location.href = "index.html";
+});
 
+cancelBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.location.href = "cook_book.html";
+});
 saveBtn.addEventListener('click', async (e) => {
     e.preventDefault();
 
@@ -119,7 +129,6 @@ const addIngredient = (item) => {
 
     const inrgName = ingrContainer.querySelector('.inrgName');
     inrgName.addEventListener('click', () => {
-        console.log("clicked");
         ingredientsResults.innerHTML = "";
         ingredients_search.value = "";
         addIngredienttoForm(item, null, null);
@@ -199,7 +208,6 @@ function prepareNewMealData() {
 
 async function displayData() {
     // Get the data from Firestore
-    console.log(mealId);
     readMeal(mealId).then(data => {
         //show the data in the form
         if (data) {

@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="styles.css" />
+  <script src="./script/meal.js" type="module" defer></script>
 </head>
 
 <body>
@@ -14,54 +15,75 @@
     <nav id="topmenu">
       <div id="mobileMenu">&equiv;</div>
       <ul id="topmenu_ul">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Recipes</a></li>
-        <li><a href="#">Planner</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="cook_book.html">Recipes</a></li>
+        <li><a href="add_meal.html?mode=new">Add meal</a></li>
+        <li><a href="#" id="plannerLink">Planner</a></li>
+        <li><a href="#" id="logout">Logout</a></li>
       </ul>
     </nav>
   </header>
   <main>
+    <div id="overlay"></div>
+    <div id="overlay_popup">
+      <form>
+        <fieldset>
+          <em>Choose days for planner</em>
+          <p>
+            <label>Start date:</label>
+            <input type="date" name="start_date" id="start_date" required />
+          </p>
+          <p>
+            <label>End date:</label>
+            <input type="date" name="end_date" id="end_date" required />
+          </p>
+          <button type="button" id="cancel_planner">Cancel</button>
+          <button type="submit" id="createPlanBtn">Create</button>
+        </fieldset>
+      </form>
+    </div>
     <nav>
       <ul id="path">
-        <li><a href="cook_book.html">Cook book</a> ></li>
-        <li>Potato pancakes</li>
+        <li><a href="cook_book.html">Cook book </a></li>
+        <li>&#9659; </li>
+        <li id="meal_title_header"></li>
       </ul>
     </nav>
-    <h2>Potato pancakes</h2>
+    <h2 id="meal_title"></h2>
     <div id="meal_info">
       <div>
-        <img id="meal_photo" src="images/main/recipe1.jpeg" alt="" />
+        <img id="meal_img" src="images/no_img.jpg" alt="" />
       </div>
       <div id="meal_description">
         <div>
+          <span class="meal_label">Category:</span>
+          <span class="meal_info" id="meal_category"></span>
+        </div>
+        <div>
           <span class="meal_label">Difficulty:</span>
-          <span class="meal_info">Easy</span>
+          <span class="meal_info" id="meal_difficulty"></span>
         </div>
         <div>
           <span class="meal_label">Portions:</span>
-          <span class="meal_info">3</span>
+          <span class="meal_info" id="meal_portions"></span>
         </div>
         <div>
-          <span class="meal_label">Category:</span>
-          <span class="meal_info">Dinner</span>
+          <span class="meal_label">Calories:</span>
+          <span class="meal_info" id="meal_calories"></span>
         </div>
         <div>
           <p class="meal_label">Ingredients:</p>
-          <p class="meal_text">4 large potatoes (red)
-            1 onion
-            1 clove of garlic
-            Salt
-            A little flour to keep the dough from falling apart (I think Belarusians don't use it)
-            Finely chopped dill</p>
+          <p class="meal_text" id="meal_ingredients"></p>
         </div>
       </div>
       <div>
-        <div class="action_button"><a href="">Edit</a></div>
+        <div class="action_button" id="editMealBtn">Edit</div>
       </div>
     </div>
     <div>
       <p>Preporation</p>
-      <p>Grate the potatoes on a coarse grater by hand or in a food processor. Chop the onion and garlic. Mix everything
+      <p id="meal_preporation">Grate the potatoes on a coarse grater by hand or in a food processor. Chop the onion and
+        garlic. Mix everything
         together. Season with salt, herbs, and a little flour. Mix thoroughly.
 
         Pour oil into a preheated frying pan, scoop out the dough with a spoon, drop it into the pan, and flatten it

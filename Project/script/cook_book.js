@@ -1,5 +1,5 @@
 import { logout, onAuthChange } from "./auth.js";
-import { readMeals } from "./firestore.js"
+import { readMeals, deleteMealInFirestore } from "./firestore.js"
 
 
 const logoutBtn = document.querySelector("#logout");
@@ -11,6 +11,9 @@ const overlayPopup = document.getElementById("overlay_popup");
 const createPlanBtn = document.getElementById("createPlanBtn");
 const planStartDate = document.getElementById("start_date");
 const planEndDate = document.getElementById("end_date");
+const cancelPlanner = document.getElementById("cancel_planner");
+
+const logo = document.getElementById("logo");
 
 const key = "mealsData";
 let mealsData = [];
@@ -22,6 +25,10 @@ Storage.prototype.getObj = function (key) {
     return JSON.parse(this.getItem(key))
 }
 
+logo.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.location.href = "index.html";
+});
 
 logoutBtn.addEventListener('click', async () => {
     try {
@@ -40,10 +47,21 @@ addMealBtn.addEventListener('click', (e) => {
 
 plannerLink.addEventListener('click', (e) => {
     e.preventDefault();
+    overlay.style.zIndex = 3;
     overlay.style.display = "block";
+    overlayPopup.style.zIndex = 4;
     overlayPopup.style.display = "block";
     overlayPopup.style.transition = "all 5s ease-in-out;"
+});
 
+cancelPlanner.addEventListener('click', (e) => {
+    e.preventDefault();
+    overlay.style.zIndex = -1;
+    overlay.style.display = "none";
+    overlayPopup.style.zIndex = 1;
+    overlayPopup.style.display = "none";
+    planStartDate.value = "";
+    planEndDate.value = "";
 });
 
 createPlanBtn.addEventListener('click', (e) => {
@@ -65,7 +83,6 @@ onAuthChange(async (user) => {
 
 
 const getMealsList = async (meals) => {
-    console.log(meals);
     const noMealsMsg = document.getElementById("noMealsMsg");
     const mealsList = document.getElementById("meals_wrap");
     mealsList.innerHTML = "";
@@ -80,37 +97,40 @@ const getMealsList = async (meals) => {
 
         div.innerHTML = `
                 <div>
-                    <a href="meal.html?mealId=${meal.id}"><img class="meal_img" src="${meal.img ? meal.img : "images/no_img.jpg"}" alt="" /></a>
+                    <a href="meal.html?mealId=${meal.id}" class="meal_link"><img class="meal_img" src="${meal.img ? meal.img : "images/no_img.jpg"}" alt="" /></a>
                 </div>
                 <div class="meal_name">
-                    <span>${meal.title}</span>
+                    <span><a href="meal.html?mealId=${meal.id}">${meal.title}</a></span>
                 </div>
                 <div class="meal_actions">
                     <span class="actions_del">delete</span>
                     <span class="planner_item_actions_replace">edit</span>
                 </div>`;
 
-        const viewMeal = div.querySelector(".meal_img");
-        const editMealBtn = div.querySelector(".planner_item_actions_replace");
-        const deleteMealBtn = div.querySelector(".actions_del");
+        let viewMeal = div.querySelector(".meal_img");
+        let editMealBtn = div.querySelector(".planner_item_actions_replace");
+        let deleteMealBtn = div.querySelector(".actions_del");
 
-        viewMeal.addEventListener('click', (e) => {
-            e.preventDefault();
-            window.location.href = "meal.html?id=" + meal.id;
+        viewMeal.addEventListener('click', () => {
+            window.location.href = "meal.html?mealId=" + meal.id;
         });
 
-        editMealBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            window.location.href = "add_meal.html?mode=edit&id=" + meal.id;
+        editMealBtn.addEventListener('click', () => {
+            window.location.href = "add_meal.html?mode=edit&mealId=" + meal.id;
         });
 
-        deleteMealBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            //delete from FB
-            //delete from interface
-            window.location.href = "add_meal.html?mode==delete"
+        deleteMealBtn.addEventListener('click', async (e) => {
+            if (confirm(`"Delete ${meal.title} forever?"`)) {
+                if (await deleteMealInFirestore(meal.id)) {
+                    e.currentTarget.closest(".meal").remove();
+                }
+            }
+
+
+
         });
         mealsList.appendChild(div);
     });
+
     localStorage.setObj(key, meals);
 }

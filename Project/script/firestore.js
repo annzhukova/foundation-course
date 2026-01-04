@@ -1,5 +1,5 @@
 // import { app } from "./firebase.js";
-import { getFirestore, collection, getDocs, query, where, addDoc, doc, getDoc, updateDoc } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-firestore.js";
+import { getFirestore, collection, getDocs, query, where, addDoc, doc, getDoc, updateDoc, deleteDoc } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-firestore.js";
 
 // const app = getApp()
 const db = getFirestore();
@@ -28,7 +28,6 @@ export const readMeal = async (mealId) => {
     const docSnap = await getDoc(docRef);
 
     if (docSnap.exists()) {
-        console.log("Document data:", docSnap.data());
         return docSnap.data();
     } else {
         // docSnap.data() will be undefined in this case
@@ -48,4 +47,9 @@ export const updateMealInFirestore = async (mealId, updatedData) => {
     }
     // Set the "capital" field of the city 'DC'
 
+}
+
+export const deleteMealInFirestore = async (mealId) => {
+    await deleteDoc(doc(db, "meals", mealId));
+    return true;
 }

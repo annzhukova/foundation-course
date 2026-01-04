@@ -5,8 +5,8 @@ const urlParams = new URLSearchParams(window.location.search);
 const dateStart = urlParams.get("dateStart");
 const dateEnd = urlParams.get("dateEnd");
 const mainElement = document.getElementById("mainElement");
+const logo = document.getElementById("logo");
 let mealsData = [];
-console.log(mainElement);
 
 //initialisation: start date, end date
 
@@ -35,6 +35,11 @@ onAuthChange(async (user) => {
 
 })
 
+logo.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.location.href = "index.html";
+});
+
 const showPlanner = () => {
     mealsData = localStorage.getObj(key);
     const breakfasts = Array.from(mealsData).filter((meal) => {
@@ -49,14 +54,13 @@ const showPlanner = () => {
     const dinners = Array.from(mealsData).filter((meal) => {
         return meal.category === "Dinner";
     })
-    //console.log(dateEnd - dateStart);
     const date1 = new Date(dateEnd);
     const date2 = new Date(dateStart);
     const diffTime = Math.abs(date2 - date1);
     const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
     //const todayDate = new Date();
     //date1.setHours(0,0,0,0) === todaysDate.setHours(0,0,0,0);
-    for (let i = 0; i < diffDays; i++) {
+    for (let i = 0; i <= diffDays; i++) {
         const section = document.createElement('section');
         section.classList.add("planner_day");
         const divHeader = document.createElement('div');
@@ -71,12 +75,15 @@ const showPlanner = () => {
         let lunchHtml = "";
         let snackHtml = "";
         let dinnerHtml = "";
-
+        let randomBreakfast = breakfasts[Math.floor(Math.random() * breakfasts.length)];
+        let randomLunch = lunches[Math.floor(Math.random() * lunches.length)];
+        let randomSnack = snacks[Math.floor(Math.random() * snacks.length)];
+        let randomDinner = dinners[Math.floor(Math.random() * dinners.length)];
         if (breakfasts[i]) {
             breakfastHtml = `<div class="planner_item">
                                 <div><span class="planner_item_category">Breakfast</span></div>
-                                <div><img class="planner_item_img" src="${breakfasts[i].img != null ? breakfasts[i].img : 'images/no_img.jpg'}" alt=""/></div>
-                                <div class="planner_item_name_wrap"><span>${breakfasts[i].title}</span></div>
+                                <div><img class="planner_item_img" src="${randomBreakfast.img != null ? randomBreakfast.img : 'images/no_img.jpg'}" alt=""/></div>
+                                <div class="planner_item_name_wrap"><span>${randomBreakfast.title}</span></div>
                                 <div class="planner_item_actions">
                                     <span class="planner_item_actions_del">delete</span>
                                     <span class="planner_item_actions_replace">replace</span>
@@ -92,8 +99,8 @@ const showPlanner = () => {
         if (lunches[i]) {
             lunchHtml = `<div class="planner_item">
                                 <div><span class="planner_item_category">Lunch</span></div>
-                                <div><img class="planner_item_img" src="${lunches[i].img != null ? lunches[i].img : "images/no_img.jpg"}" alt=""/></div>
-                                <div class="planner_item_name_wrap"><span>${lunches[i].title}</span></div>
+                                <div><img class="planner_item_img" src="${randomLunch.img != null ? randomLunch.img : "images/no_img.jpg"}" alt=""/></div>
+                                <div class="planner_item_name_wrap"><span>${randomLunch.title}</span></div>
                                 <div class="planner_item_actions">
                                     <span class="planner_item_actions_del">delete</span>
                                     <span class="planner_item_actions_replace">replace</span>
@@ -109,8 +116,8 @@ const showPlanner = () => {
         if (snacks[i]) {
             snackHtml = `<div class="planner_item">
                                 <div><span class="planner_item_category">Snack</span></div>
-                                <div><img class="planner_item_img" src="${snacks[i].img != null ? snacks[i].img : "images/no_img.jpg"}" alt=""/></div>
-                                <div class="planner_item_name_wrap"><span>${snacks[i].title}</span></div>
+                                <div><img class="planner_item_img" src="${randomSnack.img != null ? randomSnack.img : "images/no_img.jpg"}" alt=""/></div>
+                                <div class="planner_item_name_wrap"><span>${randomSnack.title}</span></div>
                                 <div class="planner_item_actions">
                                     <span class="planner_item_actions_del">delete</span>
                                     <span class="planner_item_actions_replace">replace</span>
@@ -126,8 +133,8 @@ const showPlanner = () => {
         if (dinners[i]) {
             dinnerHtml = `<div class="planner_item">
                                 <div><span class="planner_item_category">Dinner</span></div>
-                                <div><img class="planner_item_img" src="${dinners[i].img != null ? dinners[i].img : "images/no_img.jpg"}" alt=""/></div>
-                                <div class="planner_item_name_wrap"><span>${dinners[i].title}</span></div>
+                                <div><img class="planner_item_img" src="${randomDinner.img != null ? randomDinner.img : "images/no_img.jpg"}" alt=""/></div>
+                                <div class="planner_item_name_wrap"><span>${randomDinner.title}</span></div>
                                 <div class="planner_item_actions">
                                     <span class="planner_item_actions_del">delete</span>
                                     <span class="planner_item_actions_replace">replace</span>

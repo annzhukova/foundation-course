@@ -369,6 +369,15 @@ fieldset em {
 #path li {
     color: rgb(113, 112, 112);
 
+
+}
+
+#path li:first-child {
+    padding-right: 10px;
+}
+
+#path li:last-child {
+    padding-left: 10px;
 }
 
 #path li a {
@@ -390,7 +399,7 @@ fieldset em {
     color: #830B11;
 }
 
-#meal_photo {
+#meal_img {
     width: 400px;
     height: 300px;
     border-radius: 15px;
@@ -407,7 +416,7 @@ fieldset em {
     font-size: 14px;
 }
 
-/*Meal list (cook book)*/
+/*cook book*/
 #overlay {
     position: fixed;
     display: none;
@@ -439,6 +448,20 @@ fieldset em {
     width: 150px;
 }
 
+#add_meal_btn {
+    padding: 10px 10px 10px 0;
+    color: #830B11;
+    font-size: 18px;
+    display: inline-block;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+#add_meal_btn:hover {
+    font-size: 20px;
+
+}
+
 #meals_wrap {
     display: flex;
     flex-direction: row;
@@ -449,7 +472,11 @@ fieldset em {
 .meal {
     margin-right: 20px;
     margin-bottom: 30px;
-    z-index: -2;
+    z-index: 2;
+}
+
+.meal .meal_link {
+    display: inline-block;
 }
 
 #meals_wrap .meal_img {
